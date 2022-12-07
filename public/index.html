@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="icon" type="image/x-icon" href="notes.ico">
+    <title>Notas</title>
+</head>
+
+<body>
+    <h1 class="TituloUno mt-4 mb-4">¡Crea notas y que todos las vean!</h1>
+    <div class="container-fluid div_new_tarjet">
+        <div id="form_new_tarjet">
+            <form action="" id="formulario">
+                <input  id="title" type="text" placeholder="Titulo de la nueva nota" class="input_new mt-4 mb-2" size="30" autofocus>
+                <textarea id="text" cols="30" rows="5" placeholder="Texto de la nueva nota" class="input_new mb-2"></textarea>
+                <button id="submit" type="submit" class="button_submit mb-4">Guardar</button>
+            </form>
+        </div>
+    </div>
+    <div class="container-fluid mt-5" id="ubicar">        
+    </div>
+
+
+
+    <script src="/socket.io/socket.io.min.js"></script>
+    <script src="./ui.js"></script>
+    <script src="./socket.js"></script>
+    <script src="send.js"></script>
+</body>
+</html>
