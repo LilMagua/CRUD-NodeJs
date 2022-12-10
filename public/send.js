@@ -1,5 +1,3 @@
-console.log("Entra al Script");
-
 const titulo = document.getElementById("title");
 const text = document.getElementById("text");
 
@@ -15,7 +13,7 @@ formulario.addEventListener("submit", (e) => {
 
 
 
-// Obtener id
+// Obtener id de la nota presioanada, se podria optimizar, ya que la funcion obtenerIdFrontend agrega el event listener a todos los elementos con la clase "Notas" cuando podria hacerlo solo a la nota que es nueva.
 let idFrontend  = "";
 const obtenerIdFrontend = () => {
     const notasFrontend = document.getElementsByClassName("Notas");
@@ -25,9 +23,9 @@ const obtenerIdFrontend = () => {
 
             if(event.target.classList.contains("Eliminar")){
                 eliminarNota(idFrontend);
+                idFrontend = "";
             }else if (event.target.classList.contains("Editar")){
                 console.log("Ocurre el evento");
-                console.log(idFrontend);
                 editarNota(idFrontend);
             }else{
                 console.log("Ha ocurrido un error");
@@ -37,4 +35,3 @@ const obtenerIdFrontend = () => {
     titulo.value = "";
     text.value = "";
 };
-
