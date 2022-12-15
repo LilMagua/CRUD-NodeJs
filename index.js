@@ -42,12 +42,17 @@ conect_mysql.connect(function(err){
 });
 
 
+
 io.on("connection", (socket) => {
     console.log("Se creo una nueva conexion: " + socket.id);
-    //console.log(datos);
-    if(datos.length > 0){
-        io.emit("server:shownotes", datos);
-    }
+    console.log(datos);
+    conect_mysql.query("SELECT * FROM Notas",function(err, results, fields){
+        datos = results;
+        if(datos.length > 0){
+            socket.emit("server:shownotes", datos);
+        }
+    });
+
 
 
     socket.on("client:newnote",(data) => {
